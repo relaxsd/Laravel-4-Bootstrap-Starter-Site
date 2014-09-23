@@ -44,6 +44,12 @@ return array(
     |
     | 'signup_form' => 'user.signup'
     |
+    | Note: For this starter project, copies of the Confide
+    |       views have been published to the views/packages
+    |       directory with the view:publish Artisan command.
+    |       The copies take precedence over the original
+    |       views, so you can change them without modifying
+    |       the view names here.
     |
     */
     'login_form' =>             'confide::login',
