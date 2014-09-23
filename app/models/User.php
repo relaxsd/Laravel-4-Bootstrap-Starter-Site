@@ -90,7 +90,7 @@ class User extends Eloquent implements ConfideUserInterface {
 
     public function currentUser()
     {
-        return (new Confide(new ConfideEloquentRepository()))->user();
+        return Confide::user();
     }
 
     /**
