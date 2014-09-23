@@ -78,21 +78,19 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
  *  ------------------------------------------
  */
 
-//:: Confide RESTful routes ::
-
-// User confirmation route
+//:: Confide User RESTful routes ::
 Route::get('users/confirm/{code}', 'UsersController@getConfirm');
-// User reset routes
 Route::get('users/reset_password/{token}', 'UsersController@getReset');
-// User password reset
-Route::get('users/reset_password', 'UsersController@postReset');
-//:: User Account Routes ::
+// POST route for reset_password, fixes Confide #371
+Route::post('users/reset_password', 'UsersController@postReset');
+// Routes for forgot_password, fixes Confide #371
+Route::get('users/forgot_password', 'UsersController@getForgot');
+Route::post('users/forgot_password', 'UsersController@postForgot');
+
+//:: Edit User Route ::
 Route::post('users/{user}/edit', 'UsersController@postEdit');
 
-//:: User Account Routes ::
-Route::post('users/login', 'UsersController@postLogin');
-
-# User RESTful Routes (Login, Logout, Register, etc)
+# Confide User RESTful Routes (Login, Logout, Register, etc)
 Route::controller('users', 'UsersController');
 
 //:: Application Routes ::

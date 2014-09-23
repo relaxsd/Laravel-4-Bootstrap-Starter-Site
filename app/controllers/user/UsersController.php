@@ -264,7 +264,8 @@ class UsersController extends BaseController {
                 ->with('notice', $notice_msg);
         } else {
             $error_msg = Lang::get('confide::confide.alerts.wrong_password_reset');
-            return Redirect::action('UsersController@resetPassword', array('token'=>$input['token']))
+            // @getReset instead of @resetPassword, fixes Confide #418
+            return Redirect::action('UsersController@getReset', array('token'=>$input['token']))
                 ->withInput()
                 ->with('error', $error_msg);
         }
