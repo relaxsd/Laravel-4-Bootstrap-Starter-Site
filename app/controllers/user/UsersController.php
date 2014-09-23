@@ -303,7 +303,7 @@ class UsersController extends BaseController {
 
     public function getSettings()
     {
-        list($user,$redirect) = User::checkAuthAndRedirect('user/settings');
+        list($user,$redirect) = User::checkAuthAndRedirect('users/settings');
         if($redirect){return $redirect;}
 
         return View::make('site/user/profile', compact('user'));

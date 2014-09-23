@@ -167,13 +167,13 @@ Should work, if not try
 ### Step 9: Start Page (Three options for proceeding)
 
 ### User login with commenting permission
-Navigate to your Laravel 4 website and login at /user/login:
+Navigate to your Laravel 4 website and login at /users/login:
 
     username : user
     password : user
 
 ## Create a new user
-Create a new user at /user/create
+Create a new user at /users/create
 
 ### Admin login
 Navigate to /admin

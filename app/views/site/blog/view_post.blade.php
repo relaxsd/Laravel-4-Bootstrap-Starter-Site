@@ -71,7 +71,7 @@
 
 @if ( ! Auth::check())
 You need to be logged in to add comments.<br /><br />
-Click <a href="{{{ URL::to('user/login') }}}">here</a> to login into your account.
+Click <a href="{{{ URL::to('users/login') }}}">here</a> to login into your account.
 @elseif ( ! $canComment )
 You don't have the correct permissions to add comments.
 @else

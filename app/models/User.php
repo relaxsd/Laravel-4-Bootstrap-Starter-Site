@@ -77,7 +77,7 @@ class User extends Eloquent implements ConfideUserInterface {
         if(empty($user->id) && ! $ifValid) // Not logged in redirect, set session.
         {
             Session::put('loginRedirect', $redirect);
-            $redirectTo = Redirect::to('user/login')
+            $redirectTo = Redirect::to('users/login')
                 ->with( 'notice', Lang::get('user/user.login_first') );
         }
         elseif(!empty($user->id) && $ifValid) // Valid user, we want to redirect.
