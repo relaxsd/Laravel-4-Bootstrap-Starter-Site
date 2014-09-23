@@ -134,7 +134,7 @@ class UsersController extends BaseController {
     public function getCreate()
     {
         // Config::get('confide::signup_form')
-        return View::make('site/user/create');
+        return View::make('site/user/signup');
     }
 
     /**
