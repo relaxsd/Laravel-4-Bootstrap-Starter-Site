@@ -207,7 +207,7 @@ class UsersController extends BaseController {
     public function getForgot()
     {
         // Config::get('confide::forgot_password_form')
-        return View::make('site/user/forgot');
+        return View::make('site/user/forgot_password');
     }
 
     /**
@@ -239,7 +239,7 @@ class UsersController extends BaseController {
     public function getReset($token)
     {
         // Config::get('confide::reset_password_form')
-        return View::make('site/user/reset')
+        return View::make('site/user/reset_password')
             ->with('token', $token);
     }
 
