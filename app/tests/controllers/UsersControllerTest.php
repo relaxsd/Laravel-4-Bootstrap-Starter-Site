@@ -1,10 +1,10 @@
 <?php
 
-class UserControllerTest extends BaseControllerTestCase {
+class UsersControllerTest extends BaseControllerTestCase {
 
     public function testShouldLogin()
     {
-        $this->requestAction('GET', 'UserController@getLogin');
+        $this->requestAction('GET', 'UsersController@getLogin');
         $this->assertRequestOk();
     }
 
@@ -17,7 +17,7 @@ class UserControllerTest extends BaseControllerTestCase {
         );
 
         $this->withInput( $credentials )
-            ->requestAction('POST', 'UserController@postLogin');
+            ->requestAction('POST', 'UsersController@postLogin');
 
         $this->assertRedirection( URL::action('BlogController@getIndex') );
     }
@@ -30,9 +30,9 @@ class UserControllerTest extends BaseControllerTestCase {
             'csrf_token' => Session::getToken());
 
         $this->withInput( $credentials )
-            ->requestAction('POST', 'UserController@postLogin');
+            ->requestAction('POST', 'UsersController@postLogin');
 
-        $this->assertRedirection( URL::action('UserController@getLogin') );
+        $this->assertRedirection( URL::action('UsersController@getLogin') );
     }
 
     /**
@@ -47,7 +47,7 @@ class UserControllerTest extends BaseControllerTestCase {
         );
 
         $this->withInput( $credentials )
-            ->requestAction('POST', 'UserController@postLogin');
+            ->requestAction('POST', 'UsersController@postLogin');
     }
 
     /**
@@ -62,9 +62,9 @@ class UserControllerTest extends BaseControllerTestCase {
         );
 
         $this->withInput( $credentials )
-            ->requestAction('POST', 'UserController@postLogin');
+            ->requestAction('POST', 'UsersController@postLogin');
 
-        $this->requestAction('GET', 'UserController@getLogin');
+        $this->requestAction('GET', 'UsersController@getLogin');
 
         $this->assertRedirection( URL::to('/') );
     }
